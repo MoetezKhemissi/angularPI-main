@@ -1,9 +1,21 @@
 package com.example.Project.transientEntities;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Component;
+
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+@Component
 public class OrderBook {
+
+    private KafkaTemplate<String,String> kafkaTemplate;
+
+    @Autowired
+    public OrderBook(KafkaTemplate<String, String> kafkaTemplate) {
+        this.kafkaTemplate = kafkaTemplate;
+    }
     public PriorityQueue<Limit> bidQueue = new PriorityQueue<>((l1, l2) -> Integer.compare(l2.getPrice(), l1.getPrice())); // Max-heap
     public PriorityQueue<Limit> askQueue = new PriorityQueue<>((l1, l2) -> Integer.compare(l1.getPrice(), l2.getPrice())); // Min-heap
 
@@ -59,15 +71,16 @@ public class OrderBook {
                 settledOrderBid.reduceVolume(settleVolume);
                 settledOrderAsk.reduceVolume(settleVolume);
                 if (settledOrderBid.getVolume() == 0) {
-                    System.out.println("Partially fulfilled Order " + settledOrderAsk.getOrderId() + " at price = " + settledOrderBid.getPrice() + " on volume = " + settledOrderAsk.getVolume());
-                    System.out.println("Fully fulfilled Order " + settledOrderBid.getOrderId() + " at price = " + settledOrderBid.getPrice());
+                    this.kafkaTemplate.send("settled-order","Partially fulfilled Order " + settledOrderAsk.getOrderId() + " at price = " + settledOrderBid.getPrice() + " on volume = " + settledOrderAsk.getVolume());
+                    this.kafkaTemplate.send("settled-order","Fully fulfilled Order " + settledOrderBid.getOrderId() + " at price = " + settledOrderBid.getPrice());
+
                     bestBid.removeOrder(settledOrderBid);
 
                 }
 
                 if (settledOrderAsk.getVolume() == 0) {
-                    System.out.println("Partially fulfilled Order " + settledOrderBid.getOrderId() + " at price = " + settledOrderBid.getPrice() + " on volume = " + settledOrderBid.getVolume());
-                    System.out.println("Fully fulfilled Order " + settledOrderAsk.getOrderId() + " at price = " + settledOrderBid.getPrice());
+                    this.kafkaTemplate.send("settled-order","Partially fulfilled Order " + settledOrderBid.getOrderId() + " at price = " + settledOrderBid.getPrice() + " on volume = " + settledOrderBid.getVolume());
+                    this.kafkaTemplate.send("settled-order","Fully fulfilled Order " + settledOrderAsk.getOrderId() + " at price = " + settledOrderBid.getPrice());
                     bestAsk.removeOrder(settledOrderAsk);
                 }
                 if (bestBid.getTotalVolume() == 0) {
