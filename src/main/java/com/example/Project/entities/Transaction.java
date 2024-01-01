@@ -24,16 +24,16 @@ public class Transaction {
     @Column(name = "transaction_date")
     private Date transactionDate;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     @Column(name = "type_transaction")
     private TypeTransaction typeTransaction;
-    @ManyToOne
-    @JoinColumn(name = "from_account_id")
-    private Account fromAccount;
 
     @ManyToOne
-    @JoinColumn(name = "to_account_id")
-    private Account toAccount;
+    @JoinColumn(name = "account_account_id")
+    private Account account;
 
+    @ManyToOne
+    @JoinColumn(name = "asset_asset_id")
+    private Asset asset;
 
 }

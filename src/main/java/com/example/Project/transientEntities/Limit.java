@@ -40,4 +40,15 @@ public class Limit {
     public List<Order> getOrders() {
         return new ArrayList<>(orders);
     }
+
+    public Order containsOrder(Long orderId) {
+
+            for (Order existingOrder : orders) {
+                if (existingOrder.getOrderId()==orderId) {
+                    return existingOrder;
+                }
+            }
+            return null;
+        }
+
 }
