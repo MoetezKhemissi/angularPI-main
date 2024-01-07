@@ -1,0 +1,54 @@
+<div class="row mx-auto">
+    <div class="col-md-8">
+      <h2>Liste des projets</h2>
+      <table class="table">
+        
+        <tbody>
+          <tr *ngFor="let project of projects">
+            <td>{{ project.name }}</td>
+            <td>{{ project.description }}</td>
+            <td>{{ project.estimated_time }}</td>
+            <td>{{ project.investable_amout }}</td>
+            <td>{{ project.number_inv }}</td>
+            <td>{{ project.share_inv }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-4">
+      <h2>Ajouter un projet</h2>
+      <form (ngSubmit)="ajouter()">
+        <div class="form-group">
+          <label for="nom">Nom</label>
+          <input type="text" class="form-control" id="nom" [(ngModel)]="newProject.name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea class="form-control" id="description" [(ngModel)]="newProject.description" name="description" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="estimated_time">Temps estimé</label>
+          <input type="text" class="form-control" id="estimated_time" [(ngModel)]="newProject.estimated_time" name="estimated_time" required>
+        </div>
+        <div class="form-group">
+          <label for="investable_amout">Montant investissable</label>
+          <input type="number" class="form-control" id="investable_amout" [(ngModel)]="newProject.investable_amout" name="investable_amout" required>
+        </div>
+        <div class="form-group">
+          <label for="number_inv">Nombre d'investisseurs</label>
+          <input type="number" class="form-control" id="number_inv" [(ngModel)]="newProject.number_inv" name="number_inv" required>
+        </div>
+        <div class="form-group">
+          <label for="share_inv">Part de l'investissement</label>
+          <input type="number" class="form-control" id="share_inv" [(ngModel)]="newProject.share_inv" name="share_inv" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+        <div class="form-group">
+            <label for="image">Image</label>
+            <input type="text" class="form-control" id="image" [(ngModel)]="newProject.image" name="image" required>
+          </div>
+        
+      </form>
+    </div>
+  </div>
+  

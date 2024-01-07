@@ -1,0 +1,84 @@
+
+<div class="row">
+          <div class="card">
+            <div class="card-body">
+                  <div class="card-body border-top" style="height: 90px;">
+                <ng-container *ngFor="let alert of alerts">
+                  <ngb-alert [type]="alert.type" [dismissible]="false">
+                        <button type="button" name="button" class="close" (click)="closeAlert(alert)">
+                          <span aria-hidden="true">
+                            <i class="now-ui-icons ui-1_simple-remove"></i>
+                          </span>
+                        </button>
+                        <div class="message">
+                          <ng-container *ngIf="alert.icon">
+                            <div class="alert-icon">
+                              <i class="now-ui-icons {{alert.icon}}"></i>
+                            </div>
+                          </ng-container>
+                          <strong>{{alert.strong}} </strong>{{ alert.message }}
+                        </div>
+                  </ngb-alert>
+                </ng-container>
+              </div>
+          <div class="card-body border-top">
+            <h4 class="card-title">Consultation Board</h4>
+            <h5 class="card-subtitle text-muted">Overview of the consultations</h5>
+            <table class="table align-middle text-nowrap">
+              <thead>
+                <tr>
+                  <th class="text-dark font-medium fs-4">User</th>
+                  <th class="text-dark font-medium fs-4">ID</th>
+                  <th class="text-dark font-medium fs-4">Motive</th>
+                  <th class="text-dark font-medium fs-4">Creation Date</th>
+                  <th class="text-dark font-medium fs-4">Status</th>
+                  <th class="text-dark font-medium fs-4">Code</th>
+                  <th class="text-dark font-medium fs-4">Type</th>
+                  <th class="text-dark font-medium fs-4">Operations</th>
+                </tr>
+              </thead>
+              <tbody>
+                <ng-container *ngFor="let consultation of consultations">
+                  <tr>
+                    <td>
+                      <div class="d-flex align-items-center" *ngIf="consultation.user">
+                        <div class="d-flex align-items-center">
+                          <img [src]="consultation.user" alt="user" width="45" class="rounded-circle">
+                          <div class="ms-3">
+                            <h5 class="mb-0 font-medium" style="color: black;">{{consultation.user.firstname}} {{consultation.user.lastname}}</h5>
+                            <span class="text-muted">{{consultation.user.email}}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="fs-4" style="color: black;" >{{consultation.id_cons}}</td>
+                    <td>
+                      <h5 class="fs-4" style="color: black;">{{consultation.motive_cons}}</h5>
+                    </td>
+                    <td>
+                      <h5 class="fs-4" style="color: black;">{{consultation.creationdate_cons}}</h5>
+                    </td>
+                    <td>
+                      <span class="p-2 bg-{{consultation.status_cons ? 'success' : 'danger'}} rounded-circle d-inline-block ms-3"></span>
+                    </td>
+                      <td>
+                        <h5 class="fs-4" style="color: black;">{{consultation.code_cons}}</h5>
+                    </td>
+                    <td>
+                      <h5 class="mb-0 fw-normal" style="color: black;" *ngIf="consultation.typecons=='online'">online</h5>
+                      <h5 class="mb-0 fw-normal" style="color: black;" *ngIf="consultation.typecons=='facetoface'">face to face</h5>
+                  </td>
+                  <td>
+                    <tr>
+                    <button class="btn btn-outline-success" (click)="assignConsultToUser(consultation.id_cons)" *ngIf="consultation.status_cons === false">Assign Consultation</button>
+                    <button class="btn btn-outline-danger" (click)="deleteConsultation(consultation.id_cons)" *ngIf="consultation.status_cons === false">Reject Consultation</button>
+                    </tr>
+                    <button class="btn btn-outline-secondary" (click)="cancelConsultation(consultation.id_cons)" *ngIf="consultation.status_cons === true">Cancel Consultation</button>
+                    </td>
+                  </tr>    
+                </ng-container>
+              </tbody>
+          </table>
+      </div>
+      </div>
+    </div> 

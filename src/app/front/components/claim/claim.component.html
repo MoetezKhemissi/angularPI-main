@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passer Réclamation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .wrapper {
+            background-image: url('assets/img/bg6.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .page-header {
+            padding: 20px;
+        }
+
+        .title {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        #content {
+            background-color: #fff;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-container {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .btn2 {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .btn2:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+  <div class="wrapper">
+        <div class="container">
+            <div class="content-center">
+                <h1 class="title">Passer Réclamation</h1>
+                <div class="text-center">
+                  <h6>Réclamation</h6>
+                </div>
+            </div>
+        </div>
+</div>
+    <div id="content">
+        <div class="input-container">
+            <label for="claim_subject">Subject:</label>
+            <input id="claim_subject" name="claim_subject" placeholder="Enter the subject of your complaint" required>
+        </div>
+
+        <div class="input-container">
+            <label for="claim_description">Description:</label>
+            <textarea id="claim_description" name="claim_description" placeholder="Describe your complaint here" required></textarea>
+        </div>
+
+        <button class="btn2" onclick="createClaim()">Submit Complaint</button>
+    </div>
+
+</body>
+</html>
+
+<!--<div id="content">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light"></nav>
+
+  <div class="input-container">
+      <label for="claim_subject">Subject:</label>
+      <input id="claim_subject" name="claim_subject" [(ngModel)]="claim.subject" required>
+
+      <label for="claim_description">Description:</label>
+      <textarea id="claim_description" name="claim_description" [(ngModel)]="claim.description" required></textarea>
+  </div>
+
+  <button class="btn2" (click)="createclaim()">Ajouter</button>
+</div>
+-->

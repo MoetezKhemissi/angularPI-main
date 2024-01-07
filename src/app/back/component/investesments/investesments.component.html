@@ -1,0 +1,19 @@
+<div class="card-deck">
+    <div class="card" *ngFor="let investment of investesments">
+      <div class="card-body">
+        <h5 class="card-title">{{ investment.name_investesment }}</h5>
+        
+        
+        
+        <div class="reclamation-subject">Investable amount:{{investment.amout_investesment}}</div>
+            <div class="reclamation-description">Taux d'investesment:{{investment.taux_inves}}</div>
+            <div class="reclamation-date">Final Amount:{{investment.final_amount}}</div>
+            
+            
+      </div>
+    </div>
+  </div>
+  
+  <app-export-pdf></app-export-pdf>
+
+
