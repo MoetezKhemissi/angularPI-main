@@ -1,0 +1,33 @@
+<!-- <div>
+    <label for="prompt">Enter prompt:</label>
+    <input id="prompt" [(ngModel)]="prompt" (keyup.enter)="getChatResponse()" />
+    <button (click)="getChatResponse()">Submit</button>
+  </div> -->
+  <script src="./floating-chat.js"></script>
+  <!-- <div *ngIf="chatResponse">
+    <p>ChatBot Response: {{ chatResponse }}</p>
+  </div> -->
+
+  <div class="floating-chat">
+    <i class="fa-regular fa-message"></i>
+    <div class="chat">
+        <div class="header">
+            <span class="title">
+                what's on your mind?
+            </span>
+            <button>
+                <i class="fa-solid fa-xmark"></i>
+            </button>                     
+        </div>
+        <ul class="messages">
+            <!-- Change "self" to user input and "other" to chatbot response -->
+            <li *ngFor="let message of messages" [ngClass]="message.sender">
+                {{ message.text }}
+              </li>
+        </ul>
+        <div class="footer">
+            <input id="prompt" class="text-box" [(ngModel)]="prompt" (keyup.enter)="sendNewMessage()">
+            <button id="sendMessage" (click)="sendNewMessage()" >send</button>
+        </div>
+    </div>
+</div>
