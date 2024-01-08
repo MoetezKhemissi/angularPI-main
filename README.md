@@ -35,7 +35,7 @@ Before integrating components from another project, ensure this Angular applicat
 
 2. **Add to AppModule**:
     -In app.module.ts, import the added component.
-    import { YourComponentName } from './path/to/your-component';
+     ```import { YourComponentName } from './path/to/your-component'; ```
     -Add the component to the declarations array in @NgModule
     ```@NgModule({
   declarations: [
@@ -55,7 +55,7 @@ export class AppModule { }```
   { path: 'your-component-path', component: YourComponentName },
 ]; ```
 
-5. **Add Navbar Navigationg**:
+5. **Add Navbar Navigation**:
     To include a navigation link in the navbar, edit navbar.component.html.
     ```<li class="nav-item">
                 <a class="nav-link" href="[Route correspondante]" target="_blank">
