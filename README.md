@@ -37,12 +37,7 @@ Before integrating components from another project, ensure this Angular applicat
     -In app.module.ts, import the added component.
      ```import { YourComponentName } from './path/to/your-component'; ```
     -Add the component to the declarations array in @NgModule
-    ```@NgModule({
-  declarations: [
-    // ... other declarations
-    YourComponentName
-  ],
-  // ... other module properties
+    ```@NgModule({ declarations: [ YourComponentName],
 })
 export class AppModule { }```
 3. **Add External Libraries**:
@@ -50,10 +45,7 @@ export class AppModule { }```
      Ps: check in your package.json or red highlighted areas if you don't know which packages you added manually
 4. **Add Routing**:
     -The component should be accessible through routing, add a route in app-routing.module.ts(tested for frontend dunno about backend)
-     ```const routes: Routes = [
-  // ... other routes
-  { path: 'your-component-path', component: YourComponentName },
-]; ```
+     ```const routes: Routes = [ { path: 'your-component-path', component: YourComponentName }, ]; ```
 
 5. **Add Navbar Navigation**:
     To include a navigation link in the navbar, edit navbar.component.html.
