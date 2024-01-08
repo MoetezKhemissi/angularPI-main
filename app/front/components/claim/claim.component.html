@@ -1,0 +1,27 @@
+<div class="wrapper" style="background-image: url('assets/img/bg6.jpg');">
+    <div class="page-header page-header-small">
+       
+        
+        
+    </div>
+</div>
+<div id="content">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"></nav>
+    <div class="input-container">
+        <label for="amout_investesment">ClaimDescription:</label>
+        <input  id="amout_investesment" name="amout_investesment" [(ngModel)]="claim.description_claim" required>
+      </div>
+      <label for="subject-claim">Subject claim:</label>
+<select id="subject-claim" name="subject-claim" [(ngModel)]="claim.subjectclaim">
+  <option value="credit">Credit</option>
+  <option value="account">Account</option>
+  <option value="service">Service</option>
+</select>
+      
+      
+      <button class="btn2" (click)="createclaim()">Ajouter</button>
+      
+    
+    
+</div>

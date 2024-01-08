@@ -1,0 +1,41 @@
+<div class="wrapper" style="background-image: url('assets/img/bg6.jpg');">
+    <div class="page-header page-header-small">
+       
+        
+        
+    </div>
+    
+   <body>
+          
+          <div class="card-deck">
+            <div class="card" *ngFor="let project of listProjects">
+            <img class="card-img-top" [src]="'../../../../assets/images/' + project.image" alt="Card image cap">
+            <div class="card-body">
+            <p class="card-title">{{ project.name }}</p>
+            
+            <p class="card-text">Description: {{ project.description }}</p>
+            
+                <p class="card-text">Investable Amount: {{ project.investable_amout }}</p>
+                <p class="card-text">Estimated Time: {{ project.estimated_time }}</p>
+                
+                <p class="card-text">Number of Investors: {{ project.number_inv }}</p>
+                <p class="card-text">Shared Investors :{{ project.share_inv }}</p>
+                <a href="investesment" class="btn btn-primary btn-gradient bottom-right">Invest</a>
+            </div>
+         </div>
+         </div>
+    </body>
+       
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+

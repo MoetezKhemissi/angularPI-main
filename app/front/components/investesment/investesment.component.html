@@ -1,0 +1,32 @@
+
+<div class="wrapper" style="background-image: url('assets/img/bg6.jpg');">
+    <div class="page-header page-header-small">
+       
+        
+        
+    </div>
+</div>
+<div id="content">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"></nav>
+    <div class="input-container">
+        <label for="amout_investesment">Investableamount:</label>
+        <input  id="amout_investesment" name="amout_investesment" [(ngModel)]="investesment.amout_investesment" required>
+      </div>
+      <div class="input-container">
+        <label for="fundid">Fundid:</label>
+        <textarea id="fundid" name="fundid" [(ngModel)]="fundid" required></textarea>
+      </div>
+      
+      <button class="btn2" (click)="createinvestement()">Ajouter</button>
+      <div *ngIf="investesment">
+        <p>ID: {{ investesment.id_investesment }}</p>
+        <p>Investable Amount: {{ investesment.amout_investesment }}</p>
+        <p>Taux de rendement: {{ investesment.taux_inves}}</p>
+        <p>Final Amount: {{ investesment.final_amount }}</p>
+        
+        <!-- Add other properties as needed -->
+      </div>
+    
+    
+</div>
