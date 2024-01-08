@@ -1,0 +1,22 @@
+<form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="price">Price</label>
+      <input type="number" formControlName="price">
+    </div>
+    <div>
+      <label for="volume">Volume</label>
+      <input type="number" formControlName="volume">
+    </div>
+    <div>
+        <label>Order Type:</label>
+        <div>
+          <label>
+            <input type="radio" formControlName="isBuy" [value]="true"> Buy
+          </label>
+          <label>
+            <input type="radio" formControlName="isBuy" [value]="false"> Sell
+          </label>
+        </div>
+      </div>
+    <button type="submit" [disabled]="!orderForm.valid">Submit</button>
+  </form>

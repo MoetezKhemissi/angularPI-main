@@ -1,0 +1,54 @@
+
+
+
+
+
+
+<div class="wrapper">
+  <div class="page-header page-header-reduced">
+      <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/bg6.jpg');">
+      </div>
+      <div class="container">
+          <div class="content-center">
+              <h1 class="title">Transactions</h1>
+              <div class="text-center">
+                <h6>Consulter et placer vos transaction !</h6>
+              </div>
+          </div>
+      </div>
+  </div>
+ <body>
+        
+
+    <!-- ... more tabs ... -->
+    <nav>
+      <ul>
+        <li><a href="javascript:void(0)" (click)="selectTab(1)">Your Owned Assets</a></li>
+        <li><a href="javascript:void(0)" (click)="selectTab(2)">Asset List</a></li>
+        <li><a href="javascript:void(0)" (click)="selectTab(3)">Order List</a></li>
+        <li><a href="javascript:void(0)" (click)="selectTab(4)">Transaction List</a></li>
+        <li class="balance"><span>Balance: {{ balance ? balance : 'Loading...' }}</span></li>
+      </ul>
+    </nav>
+
+      <a routerLink="/account-assets">Your Owned Assets</a>
+          <app-account-assets *ngIf="selectedTab === 1 && !selectedAssetId"></app-account-assets>
+          <app-asset-list *ngIf="selectedTab === 2 && !selectedAssetId" (viewOrderbook)="showAssetDetails($event)"></app-asset-list>
+          <app-asset-details *ngIf="selectedAssetId " [assetId]="selectedAssetId"></app-asset-details>
+          <app-order-list *ngIf="selectedTab === 3 && !selectedAssetId"></app-order-list>
+          <app-transaction-list *ngIf="selectedTab === 4 && !selectedAssetId"></app-transaction-list>
+    <!-- Conditional rendering of sub-components -->
+
+
+  </body>
+
+    
+     
+  
+</div>
+
+
+
+
+
+

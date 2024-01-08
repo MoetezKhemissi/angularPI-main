@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  width: 90%;
+  }
+  
+  .left-box
+  {
+    font-family: sans-serif;
+    background: #111;
+    color: #eee;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .left-box,.right-box {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  .container, .left-box, .right-box {
+    box-sizing: border-box;
+    
+  }
+  body {
+    margin: 0;
+    padding: 0;
+  }

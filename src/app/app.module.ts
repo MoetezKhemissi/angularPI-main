@@ -31,6 +31,21 @@ import { AppRoutingModule } from 'app/app.routing';
 import { ComponentsModule } from 'app/front/components/components.module';
 import { ExamplesModule } from 'app/front/examples/examples.module';
 
+/* Transactions orders imports */
+import { OrderbookComponent } from './front/orderbook/orderbook.component';
+import { OrderComponent } from './front/order/order.component';
+import { ErrorDialogComponent } from './front/error-dialog/error-dialog.component';
+
+import { AccountAssetsComponent } from './front/account-assets/account-assets.component';
+
+import { TransactionListComponent } from './front/transaction-list/transaction-list.component';
+import { OrderListComponent } from './front/order-list/order-list.component';
+import { AssetListComponent } from './front/asset-list/asset-list.component';
+import { AssetDetailsComponent } from './front/asset-details/asset-details.component';
+import { TabComponent } from './front/tab/tab.component';
+
+/*--------------------------- */
+
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
   wheelSpeed: 1,
@@ -47,6 +62,16 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SidebarComponent,
     NavbarComponent,
     ConsultationComponent,
+    OrderbookComponent,
+    OrderComponent,
+    ErrorDialogComponent,
+    AccountAssetsComponent,
+    TabComponent,
+    TransactionListComponent,
+         OrderListComponent,
+         AssetListComponent,
+         NavbarComponent,
+         AssetDetailsComponent
   ],
   imports: [
     CommonModule,
@@ -63,7 +88,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     RouterModule,
     AppRoutingModule,
     ComponentsModule,
-    ExamplesModule
+    ExamplesModule,
   ],
   exports: [  ],
   providers: [

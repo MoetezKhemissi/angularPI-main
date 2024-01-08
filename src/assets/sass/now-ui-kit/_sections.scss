@@ -36,6 +36,7 @@
         height: 100%;
         z-index: -1;
     }
+    
 
     footer{
         position: absolute;
@@ -72,6 +73,11 @@
     &.page-header-small{
         min-height: 60vh;
         max-height: 440px;
+    }
+    &.page-header-reduced {
+        min-height: 40vh; /* Ajustez selon vos besoins */
+        max-height: 330px; /* 440px divisé par 3 */
+        /* Le reste des propriétés reste inchangé */
     }
 
     &:after,

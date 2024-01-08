@@ -21,6 +21,12 @@ import { ClaimsComponent } from './back/component/claims/claims.component';
 import { InvestesmentsComponent } from './back/component/investesments/investesments.component';
 import { EvenementComponent } from './front/components/evenement/evenement.component';
 import { ShowClaimComponent } from './front/components/show-claim/show-claim.component';
+import { TabComponent } from './front/tab/tab.component';
+import { AccountAssetsComponent } from './front/account-assets/account-assets.component';
+import { AssetDetailsComponent } from './front/asset-details/asset-details.component';
+import { AssetListComponent } from './front/asset-list/asset-list.component';
+import { OrderListComponent } from './front/order-list/order-list.component';
+import { TransactionListComponent } from './front/transaction-list/transaction-list.component';
 
 const routes: Routes =[
     { path: 'index',                component: ComponentsComponent },
@@ -38,6 +44,14 @@ const routes: Routes =[
     { path: 'claims',component: ShowClaimComponent},
     { path: 'investesments',component: InvestesmentsComponent},
     { path: 'event',component: EvenementComponent},
+
+    { path: 'tabs',component: TabComponent},
+    { path: 'account-assets', component: AccountAssetsComponent },
+    { path: 'asset-details/:id', component: AssetDetailsComponent },
+    { path: 'asset-list', component: AssetListComponent },
+    { path: 'order-list', component: OrderListComponent },
+    { path: 'transaction-list', component: TransactionListComponent },
+
 
     
     

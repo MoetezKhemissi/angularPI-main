@@ -15,6 +15,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { EvenementComponent } from './evenement/evenement.component';
 
 
+
 export const ComponentsRoutes: Routes = [
 	{
 		path: '',
@@ -71,6 +72,7 @@ export const ComponentsRoutes: Routes = [
 				path: 'event',
 				component: EvenementComponent
 			},
+			
 		]
 	}
 ];

@@ -24,6 +24,7 @@
     "@angular/localize": "^14.2.0",
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
+    "@angular/material": "^13.3.9",
     "@angular/router": "^14.2.0",
     "@ng-bootstrap/ng-bootstrap": "6.0.0",
     "ajv": "7.0.0",
