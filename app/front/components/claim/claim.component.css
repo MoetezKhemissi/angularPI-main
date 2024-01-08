@@ -1,0 +1,50 @@
+/* claim.component.css */
+
+/* Style the label */
+label {
+  display: inline-block;
+  margin-bottom: 0.75rem; /* Increase the margin bottom to add some spacing */
+  font-weight: bold;
+  font-size: 1.2rem; /* Increase the font size */
+}
+
+/* Style the selector */
+select {
+  display: block;
+  width: 30%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  margin-bottom: 1.5rem; /* Add some spacing between the selector and the button */
+}
+
+/* Style the button */
+.btn2 {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  color: #fff;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+
+.btn2:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+  color: #fff;
+}
