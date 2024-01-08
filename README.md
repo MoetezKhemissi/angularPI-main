@@ -37,9 +37,7 @@ Before integrating components from another project, ensure this Angular applicat
     -In app.module.ts, import the added component.
      ```import { YourComponentName } from './path/to/your-component'; ```
     -Add the component to the declarations array in @NgModule
-    ```@NgModule({ declarations: [ YourComponentName],
-})
-export class AppModule { }```
+    ```@NgModule({ declarations: [ YourComponentName], }) export class AppModule { }```
 3. **Add External Libraries**:
      ```npm install [library-name] ```
      Ps: check in your package.json or red highlighted areas if you don't know which packages you added manually
