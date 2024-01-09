@@ -47,6 +47,22 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import { ToastrModule } from 'ngx-toastr';
+/* Transactions orders imports */
+import { OrderbookComponent } from './front/orderbook/orderbook.component';
+import { OrderComponent } from './front/order/order.component';
+import { ErrorDialogComponent } from './front/error-dialog/error-dialog.component';
+
+import { AccountAssetsComponent } from './front/account-assets/account-assets.component';
+
+import { TransactionListComponent } from './front/transaction-list/transaction-list.component';
+import { OrderListComponent } from './front/order-list/order-list.component';
+import { AssetListComponent } from './front/asset-list/asset-list.component';
+import { AssetDetailsComponent } from './front/asset-details/asset-details.component';
+import { TabComponent } from './front/tab/tab.component';
+import { TransactionStatsChartComponent } from './front/transaction-chart/transaction-chart.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
+/*--------------------------- */
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -70,6 +86,17 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ResetPasswordComponent,
     ResetPasswordSmsComponent,
     UserProfileComponent,
+    OrderbookComponent,
+    OrderComponent,
+    ErrorDialogComponent,
+    AccountAssetsComponent,
+    TabComponent,
+    TransactionListComponent,
+         OrderListComponent,
+         AssetListComponent,
+         NavbarComponent,
+         AssetDetailsComponent,
+         TransactionStatsChartComponent
   ],
   imports: [
     CommonModule,
@@ -97,6 +124,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MatNativeDateModule,
     MatChipsModule,
     ToastrModule.forRoot(),
+    NgxChartsModule
   ],
   exports: [  ],
   providers: [

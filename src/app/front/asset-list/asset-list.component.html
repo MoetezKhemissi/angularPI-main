@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th>Asset ID</th>
+        <th>Asset Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let asset of assets">
+        <td>{{ asset.assetId }}</td>
+        <td>{{ asset.assetName }}</td>
+        <td>{{ asset.description }}</td>
+        <td>
+          <button class="glow-on-hover" (click)="logAssetId(asset.assetId)">View Orderbook</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

@@ -1,0 +1,31 @@
+
+<article>
+    <section class="orderbook-header">
+      <table width="40%">
+          <tr>
+            <th class="price" width="20%">Price</th>
+            <th width="20%">Volume</th>
+          </tr>
+      </table>
+    </section>
+    <section class="side" id="asks">
+      <table width="40%">
+        <tr *ngFor="let order of askOrders">
+          <td width="20%" class="price sell priceclick">{{ order.price }}</td>
+          <td width="20%">{{ order.totalVolume }}</td>
+        </tr>
+      </table>
+    </section>
+    <section class="divider">
+      <div class="current-price-label">Current Price:</div>
+      <div class="current-price-value">{{ currentPrice || 'Undetermined' }}</div>
+    </section>
+    <section class="side bids">
+      <table width="40%">
+        <tr *ngFor="let order of bidOrders">
+          <td width="20%" class="price buy priceclick">{{ order.price }}</td>
+          <td width="20%">{{ order.totalVolume }}</td>
+        </tr>
+      </table>
+    </section>
+  </article>

@@ -1,0 +1,69 @@
+body {
+  font-family: sans-serif;
+  background: #111;
+  color: #eee;
+  font-size: 1rem; /* Adjusted to a standard size */
+  padding: 0;
+  margin: 0;
+
+ 
+
+}
+
+table {
+  table-layout: fixed;
+  width: 100%; /* Ensure tables take the full width of their parent */
+}
+
+th {
+  font-weight: bold;
+}
+
+th, td {
+  text-align: right;
+  padding: 0.25rem; /* Add some padding for better readability */
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Prevent overflow */
+  max-height: 100vh; /* Use max-height instead of height */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.divider, .orderbook-header {
+  background: #222;
+  padding: 0.5rem; /* Add padding for these sections */
+}
+.divider {
+  display: flex;
+}
+
+.current-price {
+  font-weight: bold;
+  font-size: 1.25rem;
+  padding: 0.25rem 1rem;
+}
+.current-price-label, .current-price-value {
+  font-weight: bold;
+  font-size: 1.25rem;
+  padding: 0.25rem 1rem;
+}
+
+.current-price-value {
+  text-align: right;
+}
+
+.side {
+  flex: 1; /* Flex-grow to use available space */
+  overflow-y: auto; /* Show scrollbar if needed */
+}
+
+.price.sell {
+  color: #c00;
+}
+
+.price.buy {
+  color: #0c0;
+}

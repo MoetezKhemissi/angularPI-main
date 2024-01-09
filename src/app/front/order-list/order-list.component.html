@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>Orders List</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Asset Name</th>
+          <th>Price</th>
+          <th>Volume</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{ order.orderId }}</td>
+          <td>{{ order.assetName }}</td>
+          <td>{{ order.price }}</td>
+          <td>{{ order.volume }}</td>
+          <td>
+            <span [ngClass]="{'badge badge-success': order.buy, 'badge badge-danger': !order.buy}">
+              {{ order.buy ? 'BUY' : 'SELL' }}
+            </span>
+          </td>
+          <td>
+            <button class="btn btn-danger" (click)="cancelOrder(order.assetId, order.orderId)">Cancel</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
