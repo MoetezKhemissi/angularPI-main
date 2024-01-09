@@ -29,6 +29,10 @@ export class TabComponent implements OnInit {
   }
 
   selectTab(tabNumber: number): void {
+    if (tabNumber !== 2) {
+      //@ts-ignore
+      this.selectedAssetId = undefined;
+    }
     this.selectedTab = tabNumber;
   }
   showAssetDetails(assetId: number) {

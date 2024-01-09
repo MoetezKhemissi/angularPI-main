@@ -4,7 +4,6 @@
       <thead>
         <tr>
           <th>Order ID</th>
-          <th>Account ID</th>
           <th>Asset Name</th>
           <th>Price</th>
           <th>Volume</th>
@@ -14,7 +13,6 @@
       <tbody>
         <tr *ngFor="let order of orders">
           <td>{{ order.orderId }}</td>
-          <td>{{ order.accountId }}</td>
           <td>{{ order.assetName }}</td>
           <td>{{ order.price }}</td>
           <td>{{ order.volume }}</td>

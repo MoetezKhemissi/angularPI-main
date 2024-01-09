@@ -28,3 +28,8 @@ nav {
   li.balance {
     float:right
   }
+  body {
+    background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
+      box-shadow: 10px 10px 15px -5px #888, -10px -10px 15px -5px #888;
+    
+  }

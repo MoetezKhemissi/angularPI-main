@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
@@ -16,7 +16,7 @@ export class OrderComponent implements OnInit {
   value: string = "";
   orderForm!: FormGroup;
   userId: number;
-
+@Input() assetId:number;
   constructor(
     private formBuilder: FormBuilder,
     private orderService: OrderService,
@@ -52,7 +52,7 @@ export class OrderComponent implements OnInit {
       // Fetch accountId from UserService
       const accountId = this.userService.userId;
       orderData = { ...orderData, accountId };
-      this.orderService.addOrder(orderData).subscribe(
+      this.orderService.addOrder(orderData,this.assetId).subscribe(
         response => {
           console.log('Order added successfully', response);
           // Reset form or do any other actions upon successful submission
