@@ -1,0 +1,6 @@
+.has-danger input[type=text] {
+    border-color: #f44336;
+  }
+  .has-danger .form-control-feedback {
+    color: #f44336;
+  }

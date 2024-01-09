@@ -1,0 +1,44 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.4);
+  }
+  
+  .card:hover .card-img-top {
+    transform: scale(1.1);
+  }
+  
+  .card-img-top {
+    transition: transform 0.3s ease-in-out;
+  }
+  .btn-gradient {
+    background-image: linear-gradient(to right, #0066ff, #0099ff);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn-gradient:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .bottom-right {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  

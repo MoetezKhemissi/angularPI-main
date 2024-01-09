@@ -1,31 +1,24 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "importHelpers": true,
     "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "strictPropertyInitialization": false,
-    "emitDecoratorMetadata": true,
+    "baseUrl": "src",
     "sourceMap": true,
     "declaration": false,
-    "downlevelIteration": true,
-    "experimentalDecorators": true,
     "moduleResolution": "node",
-    "importHelpers": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "target": "es6",
     "module": "esnext",
     "lib": [
       "es2020",
       "dom"
-    ]
-  },
-  "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+
+
   }
 }

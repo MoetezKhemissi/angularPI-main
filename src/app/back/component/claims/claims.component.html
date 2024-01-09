@@ -1,0 +1,16 @@
+<div id="content">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"></nav>
+    <div class="row">
+        <div class="col-md-4" *ngFor="let claim of claims">
+          <div class="reclamation-card" [ngClass]="{'bg-warning': claim.status === 'pending', 'bg-success': claim.status === 'resolved', 'bg-danger': claim.status === 'rejected'}">
+            <div class="reclamation-subject">Sujet:{{ claim.subjectclaim }}</div>
+            <div class="reclamation-description">Description:{{ claim.description_claim }}</div>
+            <div class="reclamation-date">Date:{{ claim.creationdate_claim | date }}</div>
+            <div class="reclamation-status">Status:{{ claim.status}}</div>
+            
+          </div>
+        </div>
+      </div>
+      
+</div>
