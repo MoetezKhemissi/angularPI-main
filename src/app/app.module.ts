@@ -43,6 +43,8 @@ import { OrderListComponent } from './front/order-list/order-list.component';
 import { AssetListComponent } from './front/asset-list/asset-list.component';
 import { AssetDetailsComponent } from './front/asset-details/asset-details.component';
 import { TabComponent } from './front/tab/tab.component';
+import { TransactionStatsChartComponent } from './front/transaction-chart/transaction-chart.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 /*--------------------------- */
 
@@ -71,7 +73,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
          OrderListComponent,
          AssetListComponent,
          NavbarComponent,
-         AssetDetailsComponent
+         AssetDetailsComponent,
+         TransactionStatsChartComponent
   ],
   imports: [
     CommonModule,
@@ -89,6 +92,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AppRoutingModule,
     ComponentsModule,
     ExamplesModule,
+    NgxChartsModule
   ],
   exports: [  ],
   providers: [

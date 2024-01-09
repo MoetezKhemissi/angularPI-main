@@ -1,4 +1,4 @@
-<table>
+<table class="table">
     <thead>
       <tr>
         <th>Asset ID</th>
@@ -12,8 +12,9 @@
         <td>{{ asset.assetName }}</td>
         <td>{{ asset.description }}</td>
         <td>
-          <button (click)="logAssetId(asset.assetId)">View Orderbook</button>
+          <button class="glow-on-hover" (click)="logAssetId(asset.assetId)">View Orderbook</button>
         </td>
       </tr>
     </tbody>
   </table>
+  
